@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "X2yAKx7SaJM=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Newon\\Documents\\ClinicEngine\\ClinicEngine.API\\ClinicEngine.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Newon\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.6\\microsoft.aspnetcore.openapi.10.0.6.nupkg.sha512",
+    "C:\\Users\\Newon\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
