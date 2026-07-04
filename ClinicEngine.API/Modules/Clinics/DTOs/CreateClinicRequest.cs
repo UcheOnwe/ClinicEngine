@@ -1,4 +1,4 @@
-namespace ClinicEngine.Modules.Clinics.DTOs;
+namespace ClinicEngine.API.Modules.Clinics.DTOs;
 
 public class CreateClinicRequest
 {

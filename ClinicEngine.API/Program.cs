@@ -1,14 +1,16 @@
 using ClinicEngine.API.Infrastructure.ClinicEngineDbContext;
+using ClinicEngine.API.Modules.Clinics.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using ClinicEngine.API.Modules.Clinics.Repositories;
+using ClinicEngine.API.Modules.Clinics.Services;
 
 //Section 1 Builder Services
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi(); //Register OpenAPI (Swagger Docs)
 
-// Register controllers — this tells .NET your 
-// API has controller classes to route requests to
-builder.Services.AddControllers();
+
+
 
 //Register DbContext — this tells .NET your 
 //API has controller classes to route requests to
@@ -21,9 +23,18 @@ builder.Services.AddDbContext<ClinicEngineDbContext>(options =>
     .UseSnakeCaseNamingConvention() //Database snake_case naming conventions
 );
 
-// Add services to the container.
+// Register controllers — this tells .NET your 
+// API has controller classes to route requests to
+builder.Services.AddControllers();
 
-builder.Services.AddOpenApi();
+// "When someone asks for IClinicRepository, give them ClinicRepository"
+builder.Services.AddScoped<IClinicRepository, ClinicRepository>();
+
+// Service registered directly — no interface yet
+builder.Services.AddScoped<ClinicService>();
+
+
+
 
 var app = builder.Build();
 

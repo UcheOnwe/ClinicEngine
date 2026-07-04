@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ClinicEngine.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa459732a7de042d2fb03c36ac693da03741dc4c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d6f67c0464cc3d2cec93893a34592fb0ef4e12f1")]
 [assembly: System.Reflection.AssemblyProductAttribute("ClinicEngine.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ClinicEngine.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
