@@ -14,4 +14,5 @@ public interface IClinicRepository
     //Example switching between saving data in PostgreSQL, SQL Server, 
     // or even different repository: MongoClinicRepository
     Task<ClinicProfile> CreateAsync(ClinicProfile clinic);
+    Task<ClinicProfile?> GetByIdAsync(Guid id);
 }

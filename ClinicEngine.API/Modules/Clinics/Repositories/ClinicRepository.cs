@@ -29,4 +29,9 @@ public class ClinicRepository : IClinicRepository
         await _context.SaveChangesAsync();
         return clinic;
     }
+
+    public async Task<ClinicProfile?> GetByIdAsync(Guid id)
+    {
+        return await _context.ClinicProfiles.FindAsync(id);
+    }
 }

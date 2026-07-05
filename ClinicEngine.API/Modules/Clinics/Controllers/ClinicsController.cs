@@ -25,5 +25,17 @@ public class ClinicsController : ControllerBase //ControllerBase for the http he
         //api/clinics/{id} mapped to result
         //Location: /api/clinics/a3f8c21d-4b5c-...
     }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById([FromRoute] Guid id)
+    {
+        var result = await _service.GetByIdAsync(id);
+
+        if(result == null)
+        {
+            return NotFound(); //404 notfound
+        }
+        return Ok(result); //200 Ok
+    }
     
 }

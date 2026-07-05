@@ -1,6 +1,7 @@
 using ClinicEngine.API.Modules.Clinics.DTOs;
 using ClinicEngine.API.Modules.Clinics.Interfaces;
 using ClinicEngine.API.Modules.Clinics.Models;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace ClinicEngine.API.Modules.Clinics.Services;
 
@@ -61,6 +62,27 @@ public class ClinicService
             Slug = saved.Slug,
             OpeningHours = saved.OpeningHours,
             AnimalsSeen = saved.AnimalsSeen
+        };
+    }
+
+    public async Task<ClinicResponse?> GetByIdAsync(Guid id)
+    {
+        
+        var clinic = await _repository.GetByIdAsync(id);
+
+        if(clinic == null)
+        {
+            return null;
+        }
+        return new ClinicResponse
+        {
+            Id = clinic.Id,
+            Name = clinic.Name,
+            PhoneNumber = clinic.PhoneNumber,
+            Address = clinic.Address,
+            Slug = clinic.Slug,
+            OpeningHours = clinic.OpeningHours,
+            AnimalsSeen = clinic.AnimalsSeen
         };
     }
 }
