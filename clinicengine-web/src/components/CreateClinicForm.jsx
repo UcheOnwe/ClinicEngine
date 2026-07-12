@@ -51,7 +51,7 @@ export default function CreateClinicForm() {
         <h5 className="card-title">Register Your Clinic</h5>
         <form onSubmit={handleSubmit}>
           <div className = "mb-3">
-          <label htmlfor = "web-name-id" className = "form-label">Clinic Name</label>
+          <label htmlFor = "web-name-id" className = "form-label">Clinic Name</label>
 
           {/* name, value & onchange - input fully controlled, nam tells handleChange which field
           to update, value reads from state, onChange fires on every keypress. */}
