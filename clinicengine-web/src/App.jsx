@@ -3,6 +3,7 @@ import LandingPage from "./pages/LandingPage";
 import CreateClinicPage from "./pages/CreateClinicPage";
 import ClinicDetailPage from "./pages/ClinicDetailPage";
 
+
 function App(){
   return(
     <BrowserRouter>
