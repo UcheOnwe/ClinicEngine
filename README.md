@@ -452,7 +452,8 @@ AWS CloudWatch (logs · metrics · alerts)
 
 ## Author
 
-**Uche** — backend engineering, cloud infrastructure, AI systems integration and Database management
+**Uche** — backend engineering, cloud infrastructure, AI systems integration, and Database management
+
 **Leesha** - backend engineering, cloud infrastructure, AI systems integration, and Database management
 
 Built as a real product and engineering portfolio — not a tutorial project or school assignment.
