@@ -57,7 +57,9 @@ builder.Services.AddCors(options =>
    options.AddPolicy("AllowReactApp", policy =>
    {
        policy
-        .WithOrigins("http://localhost:5173") //Only this Origin is allowed, everything else blocked
+        .WithOrigins("http://localhost:5173",
+                    "http://clinicengine-web.s3-website-us-east-1.amazonaws.com"
+        ) //Only this Origin is allowed, everything else blocked
         .AllowAnyHeader() //Allows Content-Type, Authorization, and other headers react will send
         //with requests
         .AllowAnyMethod(); //Allows GET, POST, PUT, DELETE - All http verbs React might use

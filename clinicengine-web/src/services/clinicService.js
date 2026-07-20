@@ -1,4 +1,5 @@
-const API_URL = "http://localhost:5145/api/clinics";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API_URL = `${API_BASE_URL}/api/clinics`;
 
 export async function createClinic(data){
     const response = await fetch(API_URL, {
