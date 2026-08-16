@@ -8,6 +8,10 @@ on:
   pull_request:
     branches:
       - main
+  
+  permissions:
+    id-token: write
+    contents: read
 
 jobs:
   build:
@@ -51,5 +55,17 @@ jobs:
       - name: build frontend
         working-directory: ./clinicengine-web
         run: npm run build
+      
+      - name: Configure AWS credentials
+        if: github.event_name = 'push' && github.ref == 'refs/heads/main'
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }} 
+          aws-region: us-east-1
+
+      - name: Deploy frontend to S3
+        if: github.event_name = 'push' && github.ref == 'refs/heads/main'
+        working-directory: ./clinicengine-web
+        run: aws s3 sync dist/ s3://clinicengine-web --delete
 
        
